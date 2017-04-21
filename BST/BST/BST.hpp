@@ -21,7 +21,11 @@ public:
     BST();
     void insert(StudentData *student);
     bool search(StudentData *student);
+    void printInOrderTraverse();
     
+private:
+    void traverseInOrder(StudentData *root);
+    void traverseRightTreeInOrder();
 };
 
 #endif /* BST_hpp */

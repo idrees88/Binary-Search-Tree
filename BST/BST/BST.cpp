@@ -27,7 +27,7 @@ void BST::insert(StudentData *student) {
     bool isAdded = false;
     
     while (!isAdded) {
-        if (student->getStudentID() > traverse->getStudentID()) {
+        if (student->getStudentID() >= traverse->getStudentID()) {
             if (traverse->getRight() != nullptr) {
                 traverse = traverse->getRight();
             }
@@ -74,3 +74,18 @@ bool BST::search(StudentData *student) {
     
     return isFound;
 }
+
+void BST::traverseInOrder(StudentData *root) {
+    if (root != nullptr) {
+        traverseInOrder(root->getLeft());
+        cout<<"Value: "<<root->getStudentRollNo()<<"\n\n";
+        traverseInOrder(root->getRight());
+    }
+}
+
+
+
+void BST::printInOrderTraverse() {
+    traverseInOrder(this->root);
+}
+
